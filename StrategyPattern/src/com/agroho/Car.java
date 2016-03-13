@@ -6,22 +6,32 @@ package com.agroho;/*
 import com.agroho.design.DesignStyle;
 import com.agroho.engine.EngineStyle;
 
-public class Car {
+public abstract class Car {
 
-    EngineStyle engineStyle;
-    DesignStyle designStyle;
+    public EngineStyle engineStyle;
+    public DesignStyle designStyle;
 
-    public void drive(){
-        System.out.println("Car is moving on");
+    public Car() {
+
     }
 
-    public void DesignedMethod(){
+
+    public abstract void drive();
+
+    public void DesignedMethod() {
         designStyle.designMethod();
     }
 
-    public void EngineChecking(){
+    public void EngineChecking() {
         engineStyle.CheckedEngine();
     }
 
+    public void setEngineStyle(EngineStyle es) {
+        engineStyle = es;
+    }
+
+    public void setDesignStyle(DesignStyle ds) {
+        designStyle = ds;
+    }
 
 }
